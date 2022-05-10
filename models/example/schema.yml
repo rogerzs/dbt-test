@@ -11,11 +11,20 @@ models:
           - unique
           - not_null
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
+  - name: second_dbt_model
+    description: "Um modelo gerado pela tabela my_first_dbt_model"
     columns:
       - name: id
-        description: "The primary key for this table"
+        description: "É a chave primária da tabela"
+        tests:
+          - unique
+          - not_null
+
+  - name: third_dbt_model
+    description: "Um modelo gerado pela união das tabelas my_first_dbt_model e second_dbt_model"
+    columns:
+      - name: id
+        description: "É uma dos identificadores únicos contidos na tabela"
         tests:
           - unique
           - not_null
